@@ -36,9 +36,11 @@ git clone https://github.com/ВАШ_ЛОГИН/Order_Acceptance.git
 Правой кнопкой по серверу → Новый запрос → выполните:
 
 CREATE DATABASE OrderAcceptanceDb;
+
 GO
 
 USE OrderAcceptanceDb;
+
 GO
 
 CREATE TABLE [dbo].[Orders] (
@@ -52,11 +54,13 @@ CREATE TABLE [dbo].[Orders] (
     [CreatedAt]        DATETIME        DEFAULT (GETDATE()) NOT NULL,
     CONSTRAINT [PK_Orders] PRIMARY KEY CLUSTERED ([Id] ASC)
 );
+
 GO
 
 Шаг 4. Добавьте тестовые данные (по желанию)
 
 INSERT INTO [dbo].[Orders] (SenderCity, SenderAddress, RecipientCity, RecipientAddress, Weight, PickupDate, CreatedAt)
+
 VALUES 
     (N'Москва', N'ул. Тверская, д. 15', N'Санкт-Петербург', N'Невский пр., д. 25', 15.5, '2026-05-20', GETDATE()),
     (N'Казань', N'ул. Баумана, д. 5', N'Екатеринбург', N'пр. Ленина, д. 50', 8.2, '2026-05-21', GETDATE()),
@@ -68,6 +72,7 @@ VALUES
     (N'Иркутск', N'ул. Ленина, д. 1', N'Красноярск', N'пр. Мира, д. 10', 18.3, '2026-05-27', GETDATE()),
     (N'Воронеж', N'пр. Революции, д. 5', N'Липецк', N'ул. Советская, д. 20', 3.2, '2026-05-28', GETDATE()),
     (N'Челябинск', N'ул. Кирова, д. 15', N'Пермь', N'ул. Ленина, д. 40', 9.8, '2026-05-29', GETDATE());
+    
 GO
 
 Шаг 5. Обновите строку подключения в Web.config
