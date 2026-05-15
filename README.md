@@ -2,10 +2,10 @@
 Веб-приложение для создания и просмотра заказов на доставку.
 
 ## Технологии и версии
-.NET Framework          4.7.2 
-ASP.NET MVC             5.2.9 
-Entity Framework        6.0 (Database First) 
-SQL Server LocalDB     (localdb)\MSSQLLocalDB 
+- .NET Framework          4.7.2 
+- ASP.NET MVC             5.2.9 
+- Entity Framework        6.0 (Database First) 
+- SQL Server LocalDB     (localdb)\MSSQLLocalDB 
 
 ## Требования
 - Visual Studio 2019/2022
@@ -35,7 +35,6 @@ git clone https://github.com/ВАШ_ЛОГИН/Order_Acceptance.git
 Шаг 3. Создайте базу данных
 Правой кнопкой по серверу → Новый запрос → выполните:
 
-sql
 CREATE DATABASE OrderAcceptanceDb;
 GO
 USE OrderAcceptanceDb;
@@ -54,7 +53,7 @@ CREATE TABLE [dbo].[Orders] (
 GO
 
 Шаг 4. Добавьте тестовые данные (по желанию)
-sql
+
 INSERT INTO [dbo].[Orders] (SenderCity, SenderAddress, RecipientCity, RecipientAddress, Weight, PickupDate, CreatedAt)
 VALUES 
     (N'Москва', N'ул. Тверская, д. 15', N'Санкт-Петербург', N'Невский пр., д. 25', 15.5, '2026-05-20', GETDATE()),
