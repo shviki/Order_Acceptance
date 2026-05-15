@@ -37,8 +37,10 @@ git clone https://github.com/ВАШ_ЛОГИН/Order_Acceptance.git
 
 CREATE DATABASE OrderAcceptanceDb;
 GO
+
 USE OrderAcceptanceDb;
 GO
+
 CREATE TABLE [dbo].[Orders] (
     [Id]               INT             IDENTITY (1, 1) NOT NULL,
     [SenderCity]       NVARCHAR (100)  NOT NULL,
