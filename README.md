@@ -77,7 +77,6 @@ GO
 
 Шаг 5. Обновите строку подключения в Web.config
 Убедитесь, что в Web.config указана ваша база данных:
-
 <connectionStrings>
     <add name="OrdersEntities" 
          connectionString="metadata=res://*/Models.Model1.csdl|res://*/Models.Model1.ssdl|res://*/Models.Model1.msl;provider=System.Data.SqlClient;provider connection string=&quot;Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=OrderAcceptanceDb;Integrated Security=True;MultipleActiveResultSets=True;App=EntityFramework&quot;" 
