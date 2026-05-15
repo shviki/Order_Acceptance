@@ -1,0 +1,88 @@
+﻿@{
+    ViewBag.Title = "Контакты";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="@Url.Content("~/Content/Contact.css")" rel="stylesheet" type="text/css" />
+
+<div class="contact-container">
+    <div class="contact-header">
+        <h1 class="contact-title">📞 @ViewBag.Title</h1>
+        <a href="@Url.Action("Index", "Orders")" class="btn-back">← На главную</a>
+    </div>
+
+    <div class="contact-card">
+        <div class="contact-header-gradient">
+            <h2>Служба доставки</h2>
+            <h3>Свяжитесь с нами любым удобным способом</h3>
+        </div>
+
+        <div class="contact-body">
+            <div class="info-row">
+                <div class="info-label">🏢 Адрес главного офиса:</div>
+                <div class="info-value">
+                    г. Москва, ул. Тверская, д. 15, офис 101<br />
+                    Бизнес-центр "Доставка-Центр"
+                </div>
+            </div>
+
+            <div class="info-row">
+                <div class="info-label">📞 Телефон горячей линии:</div>
+                <div class="info-value">8 (800) 123-45-67 (звонок бесплатный)</div>
+            </div>
+
+            <div class="info-row">
+                <div class="info-label">⏰ Режим работы:</div>
+                <div class="info-value">
+                    Пн-Пт: 9:00 - 20:00<br />
+                    Сб-Вс: 10:00 - 18:00
+                </div>
+            </div>
+
+            <div class="info-row">
+                <div class="info-label">📧 Отдел приема заказов:</div>
+                <div class="info-value">
+                    <a href="mailto:orders@delivery.ru" class="email-link">orders@delivery.ru</a>
+                </div>
+            </div>
+
+            <div class="info-row">
+                <div class="info-label">🆘 Отдел поддержки клиентов:</div>
+                <div class="info-value">
+                    <a href="mailto:support@delivery.ru" class="email-link">support@delivery.ru</a>
+                </div>
+            </div>
+
+            <div class="info-row">
+                <div class="info-label">📝 Отдел рекламаций:</div>
+                <div class="info-value">
+                    <a href="mailto:feedback@delivery.ru" class="email-link">feedback@delivery.ru</a>
+                </div>
+            </div>
+
+            <div class="info-row">
+                <div class="info-label">💬 Мессенджеры:</div>
+                <div class="info-value">
+                    WhatsApp: +7 (900) 123-45-67<br />
+                    Telegram: delivery_support
+                </div>
+            </div>
+
+            <div class="requisites">
+                <h4>Реквизиты компании:</h4>
+                <div class="info-row">
+                    <div class="info-label">Наименование:</div>
+                    <div class="info-value">ООО "Доставка-Сервис"</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">ИНН / КПП:</div>
+                    <div class="info-value">7701234567 / 770101001</div>
+                </div>
+                <div class="info-row">
+                    <div class="info-label">ОГРН:</div>
+                    <div class="info-value">1234567890123</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

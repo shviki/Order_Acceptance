@@ -1,0 +1,82 @@
+﻿@model IEnumerable<Order_Acceptance.Models.Order>
+
+@{
+    ViewBag.Title = "Список заказов";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="@Url.Content("~/Content/Index.css")" rel="stylesheet" type="text/css" />
+
+<div class="orders-container">
+    <div class="orders-header">
+        <h1 class="orders-title">📋 @ViewBag.Title</h1>
+        @Html.ActionLink("+ Создать заказ", "Create", null, new { @class = "btn-add" })
+    </div>
+
+    <div class="search-container">
+        @using (Html.BeginForm("Index", "Orders", FormMethod.Get, new { @class = "search-box" }))
+        {
+            <input type="text" name="searchId" id="searchId" class="search-input"
+                   placeholder="🔍 Введите номер заказа..."
+                   value="@ViewBag.CurrentSearch" />
+            <button type="submit" class="search-btn">Найти</button>
+        }
+
+        @if (!string.IsNullOrEmpty(ViewBag.CurrentSearch))
+        {
+            <a href="@Url.Action("Index", "Orders")" class="reset-btn">Сбросить</a>
+        }
+    </div>
+
+    <div class="orders-table-container">
+        <table class="orders-table" id="ordersTable">
+            <thead>
+                <tr>
+                    <th>Номер заказа</th>
+                    <th>Город отправителя</th>
+                    <th>Адрес отправителя</th>
+                    <th>Город получателя</th>
+                    <th>Адрес получателя</th>
+                    <th>Вес (кг)</th>
+                    <th>Дата забора</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr onclick="location.href='@Url.Action("Details", "Orders", new { id = item.Id })'">
+                        <td data-label="Номер заказа" class="order-number">@Html.DisplayFor(modelItem => item.Id)</td>
+                        <td data-label="Город отправителя">@Html.DisplayFor(modelItem => item.SenderCity)</td>
+                        <td data-label="Адрес отправителя">@Html.DisplayFor(modelItem => item.SenderAddress)</td>
+                        <td data-label="Город получателя">@Html.DisplayFor(modelItem => item.RecipientCity)</td>
+                        <td data-label="Адрес получателя">@Html.DisplayFor(modelItem => item.RecipientAddress)</td>
+                        <td data-label="Вес (кг)">@Html.DisplayFor(modelItem => item.Weight) кг</td>
+                        <td data-label="Дата забора">@Html.DisplayFor(modelItem => item.PickupDate)</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+        @if (!Model.Any())
+        {
+            <div class="empty-state">
+                @if (!string.IsNullOrEmpty(ViewBag.CurrentSearch))
+                {
+                    <p>🔍 Заказ с номером "@ViewBag.CurrentSearch" не найден</p>
+                    <a href="@Url.Action("Index", "Orders")" class="btn-create-order">Показать все заказы</a>
+                }
+                else
+                {
+                    <p>📭 Заказов пока нет</p>
+                    @Html.ActionLink("Создать первый заказ", "Create", null, new { @class = "btn-create-order" })
+                }
+            </div>
+        }
+    </div>
+</div>
+
+<script>
+    document.querySelectorAll('#ordersTable tbody tr').forEach(row => {
+        row.style.cursor = 'pointer';
+    });
+</script>

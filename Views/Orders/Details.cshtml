@@ -1,0 +1,56 @@
+﻿@model Order_Acceptance.Models.Order
+
+@{
+    ViewBag.Title = "Просмотр заказа";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="@Url.Content("~/Content/Details.css")" rel="stylesheet" type="text/css" />
+
+<div class="details-container">
+    <div class="details-header">
+        <h1 class="details-title">🔍 @ViewBag.Title</h1>
+        @Html.ActionLink("← Назад к списку", "Index", null, new { @class = "btn-back" })
+    </div>
+
+    <div class="order-card">
+        <div class="order-header">
+            <div class="order-number-large">Заказ № @Model.Id</div>
+            <div class="order-label">Номер заказа</div>
+        </div>
+        <div class="order-body">
+            <div class="info-row">
+                <div class="info-label">📦 Город отправителя:</div>
+                <div class="info-value">@Html.DisplayFor(model => model.SenderCity)</div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">📍 Адрес отправителя:</div>
+                <div class="info-value">@Html.DisplayFor(model => model.SenderAddress)</div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">🎯 Город получателя:</div>
+                <div class="info-value">@Html.DisplayFor(model => model.RecipientCity)</div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">🏠 Адрес получателя:</div>
+                <div class="info-value">@Html.DisplayFor(model => model.RecipientAddress)</div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">⚖️ Вес груза:</div>
+                <div class="info-value">@Html.DisplayFor(model => model.Weight) кг</div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">📅 Дата забора груза:</div>
+                <div class="info-value">@Html.DisplayFor(model => model.PickupDate)</div>
+            </div>
+            <div class="info-row">
+                <div class="info-label">🕐 Дата создания заказа:</div>
+                <div class="info-value">@Html.DisplayFor(model => model.CreatedAt)</div>
+            </div>
+        </div>
+    </div>
+
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

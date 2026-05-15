@@ -1,0 +1,154 @@
+﻿.contact-container {
+	padding: 20px;
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+.contact-header {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 25px;
+	flex-wrap: wrap;
+}
+
+.contact-title {
+	font-size: 28px;
+	color: #333;
+	margin: 0;
+}
+
+.btn-back {
+	background: linear-gradient(135deg, #20B2AA, #008080);
+	color: white;
+	padding: 10px 20px;
+	border-radius: 6px;
+	text-decoration: none;
+	font-weight: bold;
+	transition: all 0.3s;
+	display: inline-block;
+}
+
+	.btn-back:hover {
+		background: linear-gradient(135deg, #008080, #006060);
+		color: white;
+		text-decoration: none;
+		transform: translateY(-1px);
+	}
+
+.contact-card {
+	background: white;
+	border-radius: 12px;
+	box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+	overflow: hidden;
+	margin-bottom: 25px;
+}
+
+.contact-header-gradient {
+	background: linear-gradient(135deg, #20B2AA, #008080);
+	color: white;
+	padding: 25px;
+	text-align: center;
+}
+
+	.contact-header-gradient h2 {
+		margin: 0;
+		font-size: 24px;
+	}
+
+	.contact-header-gradient h3 {
+		margin: 10px 0 0;
+		font-size: 16px;
+		opacity: 0.9;
+	}
+
+.contact-body {
+	padding: 30px;
+}
+
+.info-row {
+	display: flex;
+	width: 100%;
+	padding: 12px 0;
+	border-bottom: 1px solid #eee;
+}
+
+.info-label {
+	width: 260px;
+	font-weight: 600;
+	color: #555;
+	flex-shrink: 0;
+}
+
+.info-value {
+	flex: 1;
+	color: #333;
+	padding-left: 20px;
+}
+
+.info-row:last-child {
+	border-bottom: none;
+}
+
+.email-link {
+	color: #008080;
+	text-decoration: none;
+}
+
+	.email-link:hover {
+		color: #20B2AA;
+		text-decoration: underline;
+	}
+
+.requisites {
+	margin-top: 20px;
+	padding-top: 15px;
+	border-top: 2px solid #20B2AA;
+}
+
+	.requisites h4 {
+		color: #008080;
+		margin-bottom: 15px;
+	}
+
+	.requisites .info-row {
+		padding: 8px 0;
+	}
+
+	.requisites .info-label {
+		width: 160px;
+	}
+
+@@media (max-width: 768px) {
+	.contact-container {
+		padding: 15px;
+	}
+
+	.contact-header-gradient {
+		padding: 20px;
+	}
+
+	.contact-body {
+		padding: 20px;
+	}
+
+	.info-row {
+		flex-direction: column;
+		padding: 10px 0;
+	}
+
+	.info-label {
+		width: 100%;
+		margin-bottom: 5px;
+		flex-shrink: 1;
+	}
+
+	.info-value {
+		width: 100%;
+		padding-left: 0;
+	}
+
+	.requisites .info-label {
+		width: 100%;
+	}
+}

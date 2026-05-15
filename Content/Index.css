@@ -1,0 +1,209 @@
+﻿.orders-container {
+    padding: 20px;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.orders-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    flex-wrap: wrap;
+}
+
+.orders-title {
+    font-size: 28px;
+    color: #333;
+    margin: 0;
+}
+
+.btn-add {
+    background: linear-gradient(135deg, #20B2AA, #008080);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s;
+    display: inline-block;
+    border: none;
+    cursor: pointer;
+}
+
+    .btn-add:hover {
+        background: linear-gradient(135deg, #008080, #006060);
+        color: white;
+        text-decoration: none;
+        transform: translateY(-1px);
+    }
+
+/* Стили поиска */
+.search-container {
+    background: white;
+    padding: 15px 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.search-box {
+    flex: 1;
+    min-width: 250px;
+    display: flex;
+    gap: 10px;
+}
+
+.search-input {
+    flex: 1;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+    .search-input:focus {
+        outline: none;
+        border-color: #20B2AA;
+        box-shadow: 0 0 0 3px rgba(32,178,170,0.1);
+    }
+
+.search-btn {
+    background: linear-gradient(135deg, #20B2AA, #008080);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+    .search-btn:hover {
+        background: linear-gradient(135deg, #008080, #006060);
+        transform: translateY(-1px);
+    }
+
+.reset-btn {
+    background: #6c757d;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s;
+}
+
+    .reset-btn:hover {
+        background: #5a6268;
+        color: white;
+        text-decoration: none;
+    }
+
+.orders-table-container {
+    overflow-x: auto;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.orders-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+
+    .orders-table th {
+        background: #f5f5f5;
+        padding: 12px 15px;
+        text-align: left;
+        font-weight: 600;
+        color: #333;
+        border-bottom: 2px solid #ddd;
+    }
+
+    .orders-table td {
+        padding: 12px 15px;
+        border-bottom: 1px solid #eee;
+        vertical-align: middle;
+    }
+
+    .orders-table tr:hover td {
+        background: #e8f4f8;
+    }
+
+    .orders-table tr {
+        cursor: pointer;
+    }
+
+.order-number {
+    font-weight: bold;
+    color: #007bff;
+}
+
+.empty-state {
+    text-align: center;
+    padding: 50px;
+    background: #f9f9f9;
+    border-radius: 8px;
+    color: #666;
+}
+
+.btn-create-order {
+    background: linear-gradient(135deg, #20B2AA, #008080);
+    color: white;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    transition: all 0.3s;
+    display: inline-block;
+}
+
+    .btn-create-order:hover {
+        background: linear-gradient(135deg, #008080, #006060);
+        color: white;
+        text-decoration: none;
+        transform: translateY(-1px);
+    }
+
+@@media (max-width: 768px) {
+    .orders-table th {
+        display: none;
+    }
+
+    .orders-table td {
+        display: block;
+        padding: 10px;
+        text-align: right;
+        position: relative;
+    }
+
+        .orders-table td::before {
+            content: attr(data-label);
+            position: absolute;
+            left: 10px;
+            font-weight: bold;
+            text-align: left;
+        }
+
+    .search-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .search-box {
+        flex-direction: column;
+    }
+}

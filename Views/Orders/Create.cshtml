@@ -1,0 +1,74 @@
+﻿@model Order_Acceptance.Models.Order
+
+@{
+    ViewBag.Title = "Создание заказа";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="@Url.Content("~/Content/Create.css")" rel="stylesheet" type="text/css" />
+
+<div class="create-container">
+    <div class="create-header">
+        <h1 class="create-title">📝 @ViewBag.Title</h1>
+        @Html.ActionLink("← Назад к списку", "Index", null, new { @class = "btn-back" })
+    </div>
+
+    <div class="form-card">
+        <div class="form-header">
+            <h3>📦 Заполните информацию о доставке</h3>
+        </div>
+
+        <div class="form-body">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.ValidationSummary(true, "", new { @class = "validation-summary-errors" })
+
+                <div class="form-group">
+                    <label class="control-label">Город отправителя <span style="color:#dc3545;">*</span></label>
+                    @Html.EditorFor(model => model.SenderCity, new { htmlAttributes = new { @class = "form-control", placeholder = "Например: Москва" } })
+                    @Html.ValidationMessageFor(model => model.SenderCity, "", new { @class = "field-validation-error" })
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label">Адрес отправителя <span style="color:#dc3545;">*</span></label>
+                    @Html.EditorFor(model => model.SenderAddress, new { htmlAttributes = new { @class = "form-control", placeholder = "Например: ул. Тверская, д. 15" } })
+                    @Html.ValidationMessageFor(model => model.SenderAddress, "", new { @class = "field-validation-error" })
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label">Город получателя <span style="color:#dc3545;">*</span></label>
+                    @Html.EditorFor(model => model.RecipientCity, new { htmlAttributes = new { @class = "form-control", placeholder = "Например: Санкт-Петербург" } })
+                    @Html.ValidationMessageFor(model => model.RecipientCity, "", new { @class = "field-validation-error" })
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label">Адрес получателя <span style="color:#dc3545;">*</span></label>
+                    @Html.EditorFor(model => model.RecipientAddress, new { htmlAttributes = new { @class = "form-control", placeholder = "Например: Невский пр., д. 25" } })
+                    @Html.ValidationMessageFor(model => model.RecipientAddress, "", new { @class = "field-validation-error" })
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label">Вес груза (кг) <span style="color:#dc3545;">*</span></label>
+                    @Html.EditorFor(model => model.Weight, new { htmlAttributes = new { @class = "form-control", placeholder = "Например: 15.5" } })
+                    @Html.ValidationMessageFor(model => model.Weight, "", new { @class = "field-validation-error" })
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label">Дата забора груза <span style="color:#dc3545;">*</span></label>
+                    @Html.EditorFor(model => model.PickupDate, new { htmlAttributes = new { @class = "form-control", type = "date" } })
+                    @Html.ValidationMessageFor(model => model.PickupDate, "", new { @class = "field-validation-error" })
+                </div>
+
+                <div class="form-actions">
+                    <input type="submit" value="✅ Создать заказ" class="btn-submit" />
+                    @Html.ActionLink("Отмена", "Index", null, new { @class = "btn-cancel" })
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
