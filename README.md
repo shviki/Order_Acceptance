@@ -14,7 +14,7 @@
 
 ## Скачивание проекта с GitHub
 ### Способ 1: Через Git 
-git clone https://github.com/ВАШ_ЛОГИН/Order_Acceptance.git
+git clone https://github.com/shviki/Order_Acceptance.git
 
 ### Способ 2: Скачать ZIP-архивом
 1. Откройте репозиторий на GitHub
