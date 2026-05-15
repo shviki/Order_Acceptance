@@ -22,7 +22,7 @@ git clone https://github.com/shviki/Order_Acceptance.git
 3. Выберите Download ZIP
 4. Распакуйте архив в удобную папку
 
-Если скачали ZIP-архивом — удалите папки bin и obj
+Если скачали ZIP-архивом — удалите папки bin и obj.
 После распаковки архива может возникнуть ошибка bin\roslyn\csc.exe. Чтобы её исправить:
 
 1. Закройте Visual Studio (если открыт)
