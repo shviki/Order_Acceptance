@@ -35,6 +35,7 @@ git clone https://github.com/ВАШ_ЛОГИН/Order_Acceptance.git
 Шаг 3. Создайте базу данных
 Правой кнопкой по серверу → Новый запрос → выполните:
 
+```xml
 CREATE DATABASE OrderAcceptanceDb;
 
 GO
@@ -56,9 +57,10 @@ CREATE TABLE [dbo].[Orders] (
 );
 
 GO
-
+```
 Шаг 4. Добавьте тестовые данные (по желанию)
 
+```xml
 INSERT INTO [dbo].[Orders] (SenderCity, SenderAddress, RecipientCity, RecipientAddress, Weight, PickupDate, CreatedAt)
 
 VALUES 
@@ -74,7 +76,7 @@ VALUES
     (N'Челябинск', N'ул. Кирова, д. 15', N'Пермь', N'ул. Ленина, д. 40', 9.8, '2026-05-29', GETDATE());
     
 GO
-
+```
 Шаг 5. Обновите строку подключения в Web.config
 Убедитесь, что в Web.config указана ваша база данных:
 
